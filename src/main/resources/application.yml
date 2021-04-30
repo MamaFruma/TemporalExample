@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+
+temporal:
+  serviceAddress: ${TEMPORAL_SERVER:localhost:7233}
+  namespace: "default"
+  workflowexecutionretentionperiod: ${WORKFLOW_EXECUTION_RETENTION_PERIOD:604800} #60 * 60 * 24 * 7 seconds
+  scheduletoclosetimeout: ${SCHEDULE_TO_CLOSE_TIMEOUT:10}
+  workflowexecutiontimeout: ${WORKFLOW_EXECUTION_TIMEOUT:10}
+  workflowruntimeout: ${WORKFLOW_RUN_TIMEOUT:10}
+  workflowretentiondays: ${WORKFLOW_RETENTION_DAYS:1}
+  workflowhostlocalpollthreadcount: ${WORKFLOW_HOST_LOCAL_POLL_THREAD_COUNT:5}
+  workflowcachesize: ${WORKFLOW_CACHES_SIZE:600}
+  maxconcurrentworkflowtaskexecutionsize: ${MAX_CONCURRENT_WORKFLOW_TASK_EXECUTION_SIZE:200}
+  workflowpollthreadcount: ${WORKFLOW_POLL_THREAD_COUNT:10}
+  maxworkflowthreadcount: ${MAX_WORKFLOW_THREAD_COUNT:600}
